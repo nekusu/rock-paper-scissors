@@ -1,39 +1,23 @@
 const options = ['rock', 'paper', 'scissors']
 
-function playerPlay() {
-	while (true) {
-		playerSelection = prompt('Rock, Paper or Scissors?').toLowerCase()
-
-		if (options.includes(playerSelection))
-			return playerSelection
-		else
-			alert('Please choose between Rock, Paper and Scissors!')
-	}
-}
-
 function computerPlay() {
-	randomIndex = Math.floor(Math.random() * options.length)
+	const randomIndex = Math.floor(Math.random() * options.length)
 	return options[randomIndex]
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound(e) {
+	const playerSelection = e.target.parentNode.getAttribute('id')
+	const computerSelection = computerPlay()
 	const playerSelectionIndex = options.indexOf(playerSelection)
 	const computerSelectionIndex = options.indexOf(computerSelection)
 
 	if (playerSelectionIndex == computerSelectionIndex + (computerSelectionIndex == 2 ? -2 : 1))
-		return `You Win! ${playerSelection} beats ${computerSelection}.`
+		console.log(`You Win! ${playerSelection} beats ${computerSelection}.`)
 	else if (playerSelectionIndex == computerSelectionIndex)
-		return `Draw! Both chose ${playerSelection}.`
+		console.log(`Draw! Both chose ${playerSelection}.`)
 	else
-		return `You Lose! ${computerSelection} beats ${playerSelection}.`
+		console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`)
 }
 
-function game() {
-	for (let i = 0; i < 5; i++) {
-		const playerSelection = playerPlay()
-		const computerSelection = computerPlay()
-		console.log(playRound(playerSelection, computerSelection))
-	}
-}
-
-game()
+const buttons = document.querySelectorAll('button')
+buttons.forEach(button => button.addEventListener('click', playRound))

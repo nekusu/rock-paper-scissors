@@ -1,0 +1,54 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	outline: none;
+	font-family: Poppins;
+	transition: all 0.25s ease;
+}
+
+:root {
+	--background: white;
+	--background-alt: rgb(245, 245, 245);
+	--background-dark: rgb(220, 220, 220);
+	--hover: rgb(249, 249, 249);
+	--hover-alt: rgb(234, 234, 234);
+	--icon: rgb(100, 100, 100);
+	--text: rgb(20, 20, 20);
+	--text-alt: rgb(100, 100, 100);
+	--radius: 100px;
+	--lightest: 0.025;
+	--light: 0.05;
+	--dark: 0.0625;
+	--darkest: 0.1;
+	--close-shadow: 0 2px 6px rgba(0, 0, 0, var(--lightest)), 0 8px 14px rgba(0, 0, 0, var(--light));
+	--distant-shadow: 0 2px 6px rgba(0, 0, 0, var(--dark)), 0 12px 20px rgba(0, 0, 0, var(--darkest));
+	--top-shadow: 0 -2px 6px rgba(0, 0, 0, var(--lightest)), 0 -8px 14px rgba(0, 0, 0, var(--light));
+}
+
+#buttons {
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	width: 80%;
+}
+
+button {
+	cursor: pointer;
+	margin: 30px;
+	background-color: var(--background-alt);
+	border-radius: var(--radius);
+	box-shadow: var(--close-shadow);
+}
+
+button img {
+	padding: 25px;
+	height: 120px;
+}
+
+button:hover,
+button:focus {
+	background-color: var(--hover);
+	box-shadow: var(--distant-shadow);
+}
