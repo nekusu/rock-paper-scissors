@@ -1,8 +1,14 @@
 const options = ['rock', 'paper', 'scissors']
+const results = document.querySelector('#results')
 
 function computerPlay() {
 	const randomIndex = Math.floor(Math.random() * options.length)
 	return options[randomIndex]
+}
+
+function showResults(result, color) {
+	results.textContent = result
+	results.style.color = color
 }
 
 function playRound(e) {
@@ -11,12 +17,13 @@ function playRound(e) {
 	const playerSelectionIndex = options.indexOf(playerSelection)
 	const computerSelectionIndex = options.indexOf(computerSelection)
 
-	if (playerSelectionIndex == computerSelectionIndex + (computerSelectionIndex == 2 ? -2 : 1))
-		console.log(`You Win! ${playerSelection} beats ${computerSelection}.`)
-	else if (playerSelectionIndex == computerSelectionIndex)
-		console.log(`Draw! Both chose ${playerSelection}.`)
-	else
-		console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`)
+	if (playerSelectionIndex == computerSelectionIndex + (computerSelectionIndex == 2 ? -2 : 1)) {
+		showResults('You Win!', 'green')
+	} else if (playerSelectionIndex == computerSelectionIndex) {
+		showResults('Draw!', 'blue')
+	} else {
+		showResults('You Lose!', 'red')
+	}
 }
 
 const buttons = document.querySelectorAll('button')

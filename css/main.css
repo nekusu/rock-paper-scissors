@@ -30,13 +30,13 @@
 #buttons {
 	display: flex;
 	justify-content: center;
-	margin: auto;
+	margin: 40px auto;
 	width: 80%;
 }
 
 button {
 	cursor: pointer;
-	margin: 30px;
+	margin: 0 30px;
 	background-color: var(--background-alt);
 	border-radius: var(--radius);
 	box-shadow: var(--close-shadow);
@@ -51,4 +51,13 @@ button:hover,
 button:focus {
 	background-color: var(--hover);
 	box-shadow: var(--distant-shadow);
+}
+
+#results {
+	display: flex;
+	justify-content: center;
+	margin: 20px auto;
+	width: 600px;
+	font-size: 22px;
+	font-weight: 500;
 }
