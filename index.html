@@ -1,21 +1,28 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
 	<title>Rock Paper Scissors</title>
 </head>
 
 <body>
-	<div id="buttons">
-		<button id="rock"><img src="svg/rock.svg" alt="Rock" title="Rock"></button>
-		<button id="paper"><img src="svg/paper.svg" alt="Paper" title="Paper"></button>
-		<button id="scissors"><img src="svg/scissors.svg" alt="Scissors" title="Scissors"></button>
+	<div id="game">
+		<h1 id="title">Rock Paper Scissors</h1>
+		<div class="rps"><img id="computer-selection" src=""></div>
+		<div id="score">0 - 0</div>
+		<div id="buttons">
+			<button class="rps" id="rock"><img src="svg/rock.svg" alt="Rock" title="Rock"></button>
+			<button class="rps" id="paper"><img src="svg/paper.svg" alt="Paper" title="Paper"></button>
+			<button class="rps" id="scissors"><img src="svg/scissors.svg" alt="Scissors" title="Scissors"></button>
+		</div>
+		<div id="results">Select an option</div>
+		<button class="hidden" id="restart-button">RESTART</button>
 	</div>
-	<div id="results"></div>
 	<script type="text/javascript" src="js/rockPaperScissors.js"></script>
 </body>
 
